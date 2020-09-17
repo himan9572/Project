@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd 
+ http://www.springframework.org/schema/context 
+ https://www.springframework.org/schema/context/spring-context.xsd" 
+ xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns="http://www.springframework.org/schema/beans">
+
+<!-- Activating the IOC container to automatically scan and inject the DependantBeans -->
+
+
+<context:component-scan base-package="com.abc"/>
+
+<!-- Providing dataSource Information(Not user defined Type) -->
+
+<bean class="com.mysql.cj.jdbc.MysqlDataSource" id="dataSource">
+<property value="jdbc:mysql://localhost:3306/mapping" name="URL"/>
+<property value="root" name="user"/>
+<property value="1234" name="password"/>
+</bean>
+
+</beans>
